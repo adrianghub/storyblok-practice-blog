@@ -1,5 +1,3 @@
-import React from 'react'
-
 import Page from "../components/Page";
 import Layout from "../components/Layout";
 import StoryblokService from "../utils/storyblok-service";
@@ -15,16 +13,15 @@ export default class extends React.Component {
 
   static async getInitialProps({ query }) {
     StoryblokService.setQuery(query);
-
-    let language = query.language || "en"
-    let insertLanguage = language !== "en" ? `/${language}` : ""
+    let language = query.language || "en";
+    let insertLanguage = language !== "en" ? `/${language}` : "";
     let res = await StoryblokService.get(`cdn/stories${insertLanguage}/home`, {
-      "resolve_relations": "featured-posts.posts"
+      resolve_relations: "featured-posts.posts",
     });
 
     return {
       res,
-      language
+      language,
     };
   }
 
