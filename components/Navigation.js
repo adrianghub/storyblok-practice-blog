@@ -46,8 +46,8 @@ const Navigation = ({ settings }) => (
               </a>
             </li>
             <li>
-              <a href="/" className="block px-4 py-1 md:p-2 lg:px-8">
-                About
+              <a href="/contact" className="block px-4 py-1 md:p-2 lg:px-8">
+                Contact
               </a>
             </li>
           </ul>
